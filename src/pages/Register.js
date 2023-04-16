@@ -3,6 +3,7 @@ import registerFields from "../utils/registerationFields";
 import { validateFields } from "../common/validation";
 import { backendURL } from "../utils/backend";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 function Register() {
   const navigator = useNavigate();
@@ -113,7 +114,9 @@ function Register() {
           <div className="d-flex flex-column text-center justify-content-evenly m-4">
             <button className="m-3 btn btn-primary">Register</button>
             <p>
-              Alredy have an account: <a href="/">Login</a>
+              Alredy have an account: <Link to="/">
+              Login
+              </Link>
             </p>
           </div>
         </form>

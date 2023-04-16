@@ -2,6 +2,7 @@ import { useState } from "react";
 import loginFields from "../utils/loginFields";
 import { backendURL } from "../utils/backend";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 function Login() {
   const navigator = useNavigate();
@@ -68,7 +69,10 @@ function Login() {
           <div className="d-flex flex-column text-center justify-content-evenly m-4">
             <button className="m-3 btn btn-primary">Login</button>
             <p>
-              Don't have an account: <a href="/register">Register</a>
+              Don't have an account: 
+              <Link to="/register">
+              Register
+              </Link>
             </p>
           </div>
         </form>
