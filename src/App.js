@@ -1,10 +1,23 @@
 import './App.css';
+import './index.css';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import { Route, Routes } from 'react-router';
+import Userdata from './pages/Userdata';
 
 function App() {
   return (
-    <div>
-      <h1>Provident Fund Frontend is under construction</h1>
-    </div>
+    <main>
+       <Navbar/>
+       <Routes>
+        <Route path='/' element={<Login />}></Route>
+        <Route path='/register' element={<Register />}></Route>
+        <Route path='/userdata' element={<Userdata />}></Route>
+       </Routes>
+       <Footer />
+    </main>
   );
 }
 

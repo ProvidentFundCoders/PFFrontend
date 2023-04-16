@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Register Page Styles */
+
+#register{
+    width: 80vw;
+}
+
+#register input{
+    width: 50vw;
+    outline: none;
+}
+
+.formhead{
+    background-color: var(--lightBlue);
+}
+
+/* Login Page Styles */
+#login{
+    width: 50vw;
+}

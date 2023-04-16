@@ -1,0 +1,21 @@
+.logo{
+    width: 7rem;
+}
+
+#navhead{
+    background-color: var(--darkBlue);
+}
+
+@media (max-width: 500px){
+    .logo{
+        width: 5rem;
+    }
+    nav h1{
+      text-align: center;
+      font-size: 1rem;
+    }
+  
+    #navhead{
+      flex-direction: column;
+    }
+  }
