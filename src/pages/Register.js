@@ -1,7 +1,7 @@
 import { useState } from "react";
 import registerFields from "../utils/registerationFields";
 import { validateFields } from "../common/validation";
-import { backendURL } from "../utils/backend";
+import { backendEnv } from "../utils/backend";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
@@ -61,7 +61,7 @@ function Register() {
     if(submit){
      const data = register;
      delete data.cpassword;
-      fetch(`${backendURL}/register`, {
+      fetch(`${backendEnv.backendURL}/register`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -72,6 +72,10 @@ function Register() {
       .then(data=>{
         if(data.success){
            navigator("/")
+           alert("User Created successfully")
+        }else{
+          console.log(data)
+          alert(data)
         }
       })
     }

@@ -10,13 +10,19 @@ body, html{
     overflow-x: hidden;
 }
 
+.table{
+    border: 1px solid grey;
+    width: 80vw;
+    margin: 1.5rem auto;
+}
+
 /* Register Page Styles */
 
-#register{
+#register, #userdata{
     width: 80vw;
 }
 
-#register input{
+#register input, #userdata input{
     width: 50vw;
     outline: none;
 }
@@ -28,4 +34,21 @@ body, html{
 /* Login Page Styles */
 #login{
     width: 50vw;
+}
+
+.form-select{
+width: 50vw;
+}
+
+/* Userdata */
+#yearTable{
+    width: 50vw;
+}
+
+.years{
+    cursor: pointer;
+}
+
+.years:hover{
+    background-color: aliceblue;
 }

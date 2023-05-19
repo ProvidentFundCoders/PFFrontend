@@ -1,11 +1,11 @@
 import { useState } from "react";
 import loginFields from "../utils/loginFields";
-import { backendURL } from "../utils/backend";
-import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
+import { backendEnv } from "../utils/backend";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
-  const navigator = useNavigate();
+const navigator = useNavigate();
+
   const [login, setLogin] = useState({
     uniqueID: "",
     password: "",
@@ -19,9 +19,9 @@ function Login() {
     });
   };
 
-  const handleSubmit = (e)=>{
+  const handleLogin = (e)=>{
      e.preventDefault();
-     fetch(`${backendURL}/login`, {
+     fetch(`${backendEnv.backendURL}/login`, {
         method: "POST",
         body: JSON.stringify(login),
         headers: {
@@ -30,7 +30,7 @@ function Login() {
      }).then((response)=>response.json())
      .then(data=>{
        if(data.success){
-          navigator("/userdata")
+        navigator("/userdata", {state: {userid: login.uniqueID}})
        }
      })
   }
@@ -44,7 +44,7 @@ function Login() {
         <h4 className="py-2 text-center formhead text-white rounded">
           Employee Login
         </h4>
-        <form className="p-4" onSubmit={handleSubmit}>
+        <form className="p-4" onSubmit={handleLogin}>
           {loginFields.map((formfield, index) => {
             return (
               <div key={index} className="d-flex flex-column">
